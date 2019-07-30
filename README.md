@@ -1,18 +1,25 @@
 
-# Image converter
+# Rudi
 
-If you want to train your network model you need to take the images of the same aspect ratio.
+If you want to train a CNN, the custom dataset must be a collection of images of the same aspect ratio, extension, etc.
+This script is gonna do that for you. Rudi is a command line tool for converting and augmenting your dataset of images.
 
-I wrote the next script for doing this thing. The script supports converting only to **JPG**.
+# Installation
 
-### Requirements
-1. Installed **Python 3** environment;
-2. Installed **Pillow** library;
-3. Root directory of your images. 
+Install `Python3` and then run the following command:
+```sh
+pip install rudi
+```
 
-**The script only works if your root directory contains directories of the image classes inside.** It is necessary for multithreading executing (one class folder - one thread), after that if the class folder also contains the other directories inside, the script will work recursively. 
+# Usage
+![Imgur](https://i.imgur.com/KIi431Z.png)
+---
+* [Convert a dataset](#convert-a-dataset)
+* [Dataset augmentation](#dataset-augmentation)
 
-For example:
+# Convert a dataset
+
+For example, you have a basic tree of the root directory (the script will also work if the root containt only images without other dirs).
 ```
 root    
 └───class1
@@ -24,21 +31,23 @@ root
     │   image_c2.png
 ```
 
-## How to use it?
+Just run `rudi convert --help`
+![Imgur](https://i.imgur.com/GAWRBja.png)
 
-Download and install dependencies:
+Let's convert images in current directory to `jpg` format and set new aspect ratio to `224px`.
 ```sh
-$ pip install Pillow
+rudi convert -t jpg --target-size=224 ./
 ```
-or
-```sh
-$ python -m pip install Pillow
-```
-Run it:
-```sh
-$ python converter.py -r ROOT_DIR -f SIZE
-```
-* ROOT_DIR - root directory of the images;
-* SIZE - image size after conversion.
+Output images will be saved in `output` dir of the root.
 
-For help use `-h` or `--help`.
+# Dataset augmentation
+
+Command: `rudi augment --help`
+![Imgur](https://i.imgur.com/64Ijbjr.png)
+
+There are a few supported operations:
+* `flip` - random image flipping followed by `-p` option
+* `rotate` - random image rotation followed by `-p`,`-mlr` and `-mrr` options
+* `distortion` - random image distortion followed by `-p`,`-mg` and `-gwh` options
+* `skew` - random image skewing followed by `-p` option and constant `magnitude` value of `0.7`
+* `zoom` - random image zooming followed by `-p`,`-minf` and `-maxf` options

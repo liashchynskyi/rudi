@@ -1,5 +1,5 @@
 import os, sys
-import argparse
+import uuid
 from PIL import Image, ImageOps
 from multiprocessing.dummy import Pool
 from multiprocessing import cpu_count
@@ -16,42 +16,41 @@ class Converter:
         self.root = root
         self.listDir = [os.path.join(root, o) for o in os.listdir(root)
                         if os.path.isdir(os.path.join(root, o))]
+        return len(self.listDir)
 
     def readd(self, dir):
         for name in os.listdir(dir):
             path = os.path.join(dir, name)
             if os.path.isfile(path):
                 self.convert(path)
-            else:
+            elif name != "output":
                 self.readd(path)
 
     def convert(self, file):
         ext = os.path.splitext(file)
         img = Image.open(str(file))
-        out_img = ImageOps.fit(img, (self.args.fit_to_size, self.args.fit_to_size), Image.ANTIALIAS, 0, (0.5, 0.5))
+        out_img = ImageOps.fit(img, (self.args[1], self.args[1]), Image.ANTIALIAS, 0, (0.5, 0.5))
         out_img = out_img.convert('RGB')
-        if ext[1] != ".jpg":
-            out_file = os.path.splitext(file)[0] + '.jpg'
+
+        dirname = os.path.split(file)[0] + '\\..\\output\\'
+
+        if not os.path.exists(dirname):
+            os.mkdir(dirname)
+
+        out_file = dirname + uuid.uuid4().hex[:7].lower() + '.' + self.args[0]
+        if self.args[0] == 'jpg':
+            out_img.save(out_file, quality=100)
         else:
-            out_file = os.path.splitext(file)[0] + '_re.jpg'
-        out_img.save(out_file, quality=100)
-        os.remove(str(file))
-        print("[+] Converted ", out_file)
+            out_img.save(out_file)
+        print("[ 🌸 ] Converted ", out_file)
 
 
-parser = argparse.ArgumentParser()
 
-parser.add_argument("-f", "--fit-to-size", type=int, help="fit all the images to that size (default: 224)", default=224)
+def convert_(*args):
+    pool = Pool(cpu_count())
+    converter = Converter(args)
+    len_dirs = converter.getDirs(args[2])
+    pool.map(converter.readd, converter.listDir) if len_dirs > 0 else converter.readd(converter.root)
 
-requiredNamed = parser.add_argument_group('required named arguments')
-requiredNamed.add_argument("-r", "--root-dir", type=str, help="root directory of the images", required=True)
-
-args = parser.parse_args()
-
-pool = Pool(cpu_count())
-converter = Converter(args)
-converter.getDirs(args.root_dir)
-pool.map(converter.readd, converter.listDir)
-
-pool.close()
-pool.join()
+    pool.close()
+    pool.join()
