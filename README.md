@@ -16,6 +16,7 @@ pip install rudi
 ---
 * [Convert a dataset](#convert-a-dataset)
 * [Dataset augmentation](#dataset-augmentation)
+* [Donate](#donate)
 
 # Convert a dataset
 
@@ -51,3 +52,10 @@ There are a few supported operations:
 * `distortion` - random image distortion followed by `-p`,`-mg` and `-gwh` options
 * `skew` - random image skewing followed by `-p` option and constant `magnitude` value of `0.7`
 * `zoom` - random image zooming followed by `-p`,`-minf` and `-maxf` options
+
+# Donate
+Just put a star on this repository 🌞 Thanks!
+
+<div align="center">
+made by <a href="https://github.com/liashchynskyi">@liashchynskyi</a>
+</div>
