@@ -1,6 +1,4 @@
 #!/usr/bin/env python
 
 import rudi
-
-if __name__ == "__main__":
-    rudi.cli()
+rudi.cli()

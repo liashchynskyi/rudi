@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name='rudi',
     version='1.0',
-    scripts=['bin/rudi'],
+    # scripts=['bin/rudi'],
     author="Petro Liashchynskyi",
     description="Small, fast and simple Python CLI image converter for CNNs.",
     long_description=long_description,
@@ -15,7 +15,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     install_requires=[
         'click',
-        #'Augmentor',
+        'Augmentor',
         'Pillow'
     ],
     classifiers=[
@@ -23,4 +23,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    entry_points={
+        'console_scripts': ['rudi=rudi:cli'],
+    }
 )

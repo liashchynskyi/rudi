@@ -1,4 +1,5 @@
 from .utils import convert_
+from .utils import augment_
 import click
 
 
@@ -38,8 +39,11 @@ def convert(type, size, root_dir):
 @click.option('--zoom/--no-zoom', default=True)
 
 @click.argument('root_dir')
-def augment(prob, num, flip, root_dir):
+def augment(**args):
     """
     Dataset augmentation
     """
+    augment_(args)
     pass
+
+

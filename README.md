@@ -53,6 +53,8 @@ There are a few supported operations:
 * `skew` - random image skewing followed by `-p` option and constant `magnitude` value of `0.7`
 * `zoom` - random image zooming followed by `-p`,`-minf` and `-maxf` options
 
+Output images will be saved in `output` dir of the root.
+
 # Donate
 Just put a star on this repository 🌞 Thanks!
 
