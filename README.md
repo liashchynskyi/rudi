@@ -13,7 +13,7 @@ pip install rudi
 
 or clone the repo firs 
 ```sh
-git clone https://github.com.liashchynskyi/rudi
+git clone https://github.com/liashchynskyi/rudi
 cd rudi
 ```
 and run `python setup.py install` or `pip install .`
