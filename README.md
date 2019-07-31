@@ -11,6 +11,13 @@ Install `Python3` and then run the following command:
 pip install rudi
 ```
 
+or clone the repo firs 
+```sh
+git clone https://github.com.liashchynskyi/rudi
+cd rudi
+```
+and run `python setup.py install` or `pip install .`
+
 # Usage
 ![Imgur](https://i.imgur.com/KIi431Z.png)
 ---
