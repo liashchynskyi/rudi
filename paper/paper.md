@@ -21,6 +21,8 @@ bibliography: refs.bib
 
 # Summary
 
+I present Rudi, a Python tool that simplifies the dataset preparation for training a convolutional neural network or other things that need images as input data. The tool contains a set of practical generalized tools, which can wrap common operations like image resizing, flipping, zooming, distortion and others. Presented tool can be helpful with extending the dateset when the user does not have enough of data.
+
 Creating a train and test dataset of images of adequate size is a very 
 non-trivial task. And this is not about the technical difficulties of collecting 
 and storing a million images, but about the perennial situation when you 
@@ -64,9 +66,10 @@ Rudi is implemented in Python. It takes as input a root directory of dataset ima
 options and outputs converted images to *output* directory in a root. 
 
 
-`Rudi` tool provides two main commands:
-* `rudi convert`
-* `rudi augment`
+Rudi tool provides two main commands:
+
++ `rudi convert`
++ `rudi augment`
 
 The first is to convert the dataset of images, with its typical interface, 
 which converts data to specific format (*file extension* `jpg|png`) and size defined by a user. 
@@ -81,12 +84,15 @@ rotating, zooming, random distortion and skewing.
 # Examples
 
 After installation `Rudi`, the tool can be called by typing `rudi` in the terminal window.
-![Output information after calling `Rudi` script in terminal](figure1.png)
+
+![Output information after calling `Rudi` script in terminal. ](figure1.png)
 
 This tool was used for expanding the dataset of biomedical images [@tneufcit2019] from under 100 to more than 500 images.
-![Example images of the original and augmented dataset](figure2.png)
+
+![Example images of the original and augmented dataset. ](figure2.png)
 
 As described by @tneufcit2019 this approach allowed author to achieve an accuracy of *95%* on *dataset of histological images* (5 classes).
-![ROC crurve for CNN classifier for histological images](figure3.png)
+
+![ROC crurve for CNN classifier for histological images. ](figure3.png)
 
 # References
