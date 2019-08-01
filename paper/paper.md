@@ -19,9 +19,11 @@ bibliography: refs.bib
 ---
 
 
-# Summary
+# Purpose of the software
 
 I present Rudi, a Python tool that simplifies the dataset preparation for training a convolutional neural network or other things that need images as input data. The tool contains a set of practical generalized tools, which can wrap common operations like image resizing, flipping, zooming, distortion and others. Presented tool can be helpful with extending the dateset when the user does not have enough of data.
+
+# Background
 
 Creating a train and test dataset of images of adequate size is a very 
 non-trivial task. And this is not about the technical difficulties of collecting 
@@ -47,6 +49,8 @@ to enlarge the training datasets and lead to better performance. Traditional dat
 augmentation techniques include traditional transformation measures such as image 
 flipping and rotations, random cropping, random scaling, center zooming, 
 brightness and sharpness adjusting and noise mixing [@micha2018]. 
+
+# Summary
 
 Modern deep learning algorithms, such as the convolutional neural network (*CNN*), is able to 
 learn features that are invariant to their location in the image. Nevertheless, augmentation 
