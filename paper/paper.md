@@ -87,15 +87,15 @@ rotating, zooming, random distortion and skewing.
 
 # Examples
 
-After installation `Rudi`, the tool can be called by typing `rudi` in the terminal window.
+After installation `Rudi`, the tool can be called by typing `rudi` in the terminal window (see Figure 1).
 
 ![Output information after calling `Rudi` script in terminal. ](figure1.png)
 
-This tool was used for expanding the dataset of biomedical images [@tneufcit2019] from under 100 to more than 500 images.
+This tool was used for expanding the dataset of biomedical images [@tneufcit2019] from under 100 to more than 500 images (see Figure 2).
 
 ![Example images of the original and augmented dataset. ](figure2.png)
 
-As described by @tneufcit2019 this approach allowed author to achieve an accuracy of *95%* on *dataset of histological images* (5 classes).
+As described by @tneufcit2019 this approach allowed author to achieve an accuracy of *95%* on *dataset of histological images* (5 classes) (see Figure 3).
 
 ![ROC crurve for CNN classifier for histological images. ](figure3.png)
 
