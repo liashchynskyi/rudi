@@ -69,6 +69,9 @@ and data augmentation. [^1] [^2]
 Rudi is implemented in Python. It takes as input a root directory of dataset images and a few additional 
 options and outputs converted images to *output* directory in a root. 
 
+After installation `Rudi`, the tool can be called by typing `rudi` in the terminal window (see Figure 1).
+
+![Output information after calling `Rudi` script in terminal. ](figure1.png)
 
 Rudi tool provides two main commands:
 
@@ -84,18 +87,13 @@ rotating, zooming, random distortion and skewing.
 
 [^2]: <https://github.com/mdbloice/Augmentor>
 
-
 # Examples
-
-After installation `Rudi`, the tool can be called by typing `rudi` in the terminal window (see Figure 1).
-
-![Output information after calling `Rudi` script in terminal. ](figure1.png)
 
 This tool was used for expanding the dataset of biomedical images [@tneufcit2019] from under 100 to more than 500 images (see Figure 2).
 
 ![Example images of the original and augmented dataset. ](figure2.png)
 
-As described by @tneufcit2019 this approach allowed author to achieve an accuracy of *95%* on *dataset of histological images* (5 classes) (see Figure 3).
+As described by @tneufcit2019 this approach allowed author to achieve *95%* accuracy on *histological images dataset* (5 classes) (see Figure 3).
 
 ![ROC crurve for CNN classifier for histological images. ](figure3.png)
 
