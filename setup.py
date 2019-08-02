@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='rudi',
-    version='1.0',
+    version='1.0.1',
     # scripts=['bin/rudi'],
     author="Petro Liashchynskyi",
     description="Small, fast and simple Python CLI image converter for CNNs.",
