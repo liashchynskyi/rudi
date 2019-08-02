@@ -23,6 +23,7 @@ and run `python setup.py install` or `pip install .`
 ---
 * [Convert a dataset](#convert-a-dataset)
 * [Dataset augmentation](#dataset-augmentation)
+* [Changelog](#changelog)
 * [Donate](#donate)
 
 # Convert a dataset
@@ -61,6 +62,13 @@ There are a few supported operations:
 * `zoom` - random image zooming followed by `-p`,`-minf` and `-maxf` options
 
 Output images will be saved in `output` dir of the root.
+
+# Changelog
+
+* `1.0.1`
+    * Fixed problem when converting images. Now if image is placed in subdirectory
+    then that subdir also will be created in `output` dir. 
+
 
 # Donate
 Just put a star on this repository 🌞 Thanks!

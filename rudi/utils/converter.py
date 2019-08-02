@@ -12,10 +12,17 @@ class Converter:
         self.root = None
         self.args = args
 
+    def makeDir(self, path, name):
+        dir = os.path.join(path, name)
+        if not os.path.exists(dir):
+            os.mkdir(dir)
+        return dir
+
     def getDirs(self, root):
         self.root = root
         self.listDir = [os.path.join(root, o) for o in os.listdir(root)
                         if os.path.isdir(os.path.join(root, o))]
+        self.output = self.makeDir(root, "output")
         return len(self.listDir)
 
     def readd(self, dir):
@@ -27,22 +34,19 @@ class Converter:
                 self.readd(path)
 
     def convert(self, file):
-        ext = os.path.splitext(file)
         img = Image.open(str(file))
         out_img = ImageOps.fit(img, (self.args[1], self.args[1]), Image.ANTIALIAS, 0, (0.5, 0.5))
         out_img = out_img.convert('RGB')
 
-        dirname = os.path.split(file)[0] + '\\..\\output\\'
+        root_of_file = os.path.basename(os.path.dirname(file))
+        file_out_dir = self.makeDir(self.output, root_of_file)
+        file_out_path = file_out_dir + os.path.sep + uuid.uuid4().hex[:7].lower() + '.' + self.args[0]
 
-        if not os.path.exists(dirname):
-            os.mkdir(dirname)
-
-        out_file = dirname + uuid.uuid4().hex[:7].lower() + '.' + self.args[0]
         if self.args[0] == 'jpg':
-            out_img.save(out_file, quality=100)
+            out_img.save(file_out_path, quality=100)
         else:
-            out_img.save(out_file)
-        print("[ 🌸 ] Converted ", out_file)
+            out_img.save(file_out_path)
+        print("[ 🌸 ] Converted and saved ", file_out_path)
 
 
 
