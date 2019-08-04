@@ -87,7 +87,7 @@ rotating, zooming, random distortion and skewing.
 
 # Examples
 
-This tool was used for expanding the dataset of biomedical images [@tneufcit2019] from under 100 to more than 500 images (see Figure 1).
+This tool was used for expanding the dataset of biomedical images [@tneufcit2019] from under 100 to over 1500 images (see Figure 1).
 
 ![Example images of the original and augmented dataset. ](figure2.png)
 
