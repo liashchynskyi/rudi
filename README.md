@@ -21,10 +21,25 @@ and run `python setup.py install` or `pip install .`
 # Usage
 ![Imgur](https://i.imgur.com/KIi431Z.png)
 ---
+* [How to cite this work](#how-to-cite-this-work)
 * [Convert a dataset](#convert-a-dataset)
 * [Dataset augmentation](#dataset-augmentation)
 * [Changelog](#changelog)
 * [Donate](#donate)
+
+# How to cite this work
+```
+@misc{petro_liashchynskyi_2019_3374946,
+  author       = {Petro Liashchynskyi},
+  title        = {{Rudi: Lightweight image converter and dataset 
+                   augmentor}},
+  month        = aug,
+  year         = 2019,
+  doi          = {10.5281/zenodo.3374946},
+  url          = {https://doi.org/10.5281/zenodo.3374946}
+}
+```
+
 
 # Convert a dataset
 
