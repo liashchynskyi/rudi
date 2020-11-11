@@ -21,7 +21,6 @@ and run `python setup.py install` or `pip install .`
 # Usage
 ![Imgur](https://i.imgur.com/KIi431Z.png)
 ---
-* [How to cite this work](#how-to-cite-this-work)
 * [Convert a dataset](#convert-a-dataset)
 * [Dataset augmentation](#dataset-augmentation)
 * [Changelog](#changelog)
