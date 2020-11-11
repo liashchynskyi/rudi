@@ -25,21 +25,6 @@ and run `python setup.py install` or `pip install .`
 * [Convert a dataset](#convert-a-dataset)
 * [Dataset augmentation](#dataset-augmentation)
 * [Changelog](#changelog)
-* [Donate](#donate)
-
-# How to cite this work
-```
-@misc{petro_liashchynskyi_2019_3374946,
-  author       = {Petro Liashchynskyi},
-  title        = {{Rudi: Lightweight image converter and dataset 
-                   augmentor}},
-  month        = aug,
-  year         = 2019,
-  doi          = {10.5281/zenodo.3374946},
-  url          = {https://doi.org/10.5281/zenodo.3374946}
-}
-```
-
 
 # Convert a dataset
 
@@ -83,11 +68,3 @@ Output images will be saved in `output` dir of the root.
 * `1.0.1`
     * Fixed problem when converting images. Now if image is placed in subdirectory
     then that subdir also will be created in `output` dir. 
-
-
-# Donate
-Just put a star on this repository 🌞 Thanks!
-
-<div align="center">
-made by <a href="https://github.com/liashchynskyi">@liashchynskyi</a>
-</div>
